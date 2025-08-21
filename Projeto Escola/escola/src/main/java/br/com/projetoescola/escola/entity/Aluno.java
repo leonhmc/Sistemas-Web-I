@@ -16,7 +16,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Aluno {
-    
+
+    // Definição dos atributos da classe Aluno
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idAluno;

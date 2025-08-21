@@ -9,6 +9,7 @@ import jakarta.persistence.Column;
 @Entity
 public class Curso {
     
+    // Definição dos atributos da classe Curso
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Integer idCurso;
