@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Alunos</title>
+</head>
+<body>
+    
+    <h1>Cadastro de alunos</h1>
+    <form>
+
+        <label for="idAluno">Nome:</label>
+        <input type="text" name="idAluno" th:field="*{nomeAluno}" />
+        <br>
+
+        <label for="telefoneAluno">Telefone:</label>
+        <input type="text" name="telefoneAluno" th:field="*{telefoneAluno}" />
+        <br>
+
+        <label for="enderecoAluno">Endereço:</label>
+        <input type="text" name="enderecoAluno" th:field="*{enderecoAluno}" />
+        <br>
+
+        <label for="cpfAluno">RM:</label>
+        <input type="text" name="rmAluno" th:field="*{rmAluno}" />
+        <br>
+
+        <label for="cpfAluno">CPF:</label>
+        <input type="text" name="cpfAluno" th:field="*{cpfAluno}" />
+        <br>
+
+        <button type="submit">Salvar</button>
+
+    </form>
+
+</body>
+</html>
