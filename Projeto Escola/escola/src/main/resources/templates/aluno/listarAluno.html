@@ -5,41 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documento</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
-<body>
+<body style="background-color: #e9e9e9;">
 
-    <h1 style="text-align: center">Lista de Alunos</h1>
-    <h3 style="text-align: center;"><a href="/alunos/criar">Cadastrar</a></h3>
+    <!-- Cabeçalho -->
+    <h1 class="p-3 bg-dark text-light" style="text-align: center">Lista de Alunos</h1>
 
-    <!-- Tabela para exibir os alunos cadastrados -->
-    <table style="margin: 0 auto; border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <td colspan="8" style="text-align: center;">Lista de Alunos</td>
-        </tr>
+    <!-- Conteúdo -->
+    <div class="container bg-light p-5 mt-5" style="border-radius: 10px;">
+        <h3 style="text-align: center;"><a href="/alunos/criar">Cadastrar</a></h3>
 
-        <tr>
-            <th>#</th>
-            <th>Nome</th>
-            <th>Endereço</th>
-            <th>Telefone</th>
-            <th>RM</th>
-            <th>CPF</th>
-            <th colspan="2">Ações</th>
-        </tr>
+        <!-- Tabela para exibir os alunos cadastrados -->
+        <table style="margin: 0 auto; border: 1px solid black; border-collapse: collapse;">
+            <tr>
+                <td colspan="8" style="text-align: center;">Lista de Alunos</td>
+            </tr>
 
-        <tr th:each="aluno : ${alunos}">
-            <td th:text="${aluno.idAluno}"></td>
-            <td th:text="${aluno.nomeAluno}"></td>
-            <td th:text="${aluno.enderecoAluno}"></td>
-            <td th:text="${aluno.telefoneAluno}"></td>
-            <td th:text="${aluno.rmAluno}"></td>
-            <td th:text="${aluno.cpfAluno}"></td>
-            <td>
-                <a th:href="@{/alunos/editar{id}(id=${aluno.idAluno})}">Editar</a>
-                <a th:href="@{/alunos/excluir{id}(id=${aluno.idAluno})}">Excluir</a>
-            </td>
-        </tr>
-    </table>
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>Telefone</th>
+                <th>RM</th>
+                <th>CPF</th>
+                <th colspan="2">Ações</th>
+            </tr>
+
+            <tr th:each="aluno : ${alunos}">
+                <td th:text="${aluno.idAluno}"></td>
+                <td th:text="${aluno.nomeAluno}"></td>
+                <td th:text="${aluno.enderecoAluno}"></td>
+                <td th:text="${aluno.telefoneAluno}"></td>
+                <td th:text="${aluno.rmAluno}"></td>
+                <td th:text="${aluno.cpfAluno}"></td>
+                <td>
+                    <a th:href="@{/alunos/editar{id}(id=${aluno.idAluno})}">Editar</a>
+                    <a th:href="@{/alunos/excluir{id}(id=${aluno.idAluno})}">Excluir</a>
+                </td>
+            </tr>
+        </table>
+    </div>
 
 </body>
 </html>
