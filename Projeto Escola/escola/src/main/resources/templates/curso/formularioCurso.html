@@ -5,11 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Cursos</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
-<body>
+<body style="background-color: #e9e9e9;">
     
-    <h1>Cadastro de Cursos</h1>
-    <fperiodo th:action="@{/cursos/salvar}" method="post" th:object="${curso}">
+    <!-- Cabeçalho -->
+    <h1 class="p-3 text-center text-light" style="background-color: black;">Cadastro de Cursos</h1>
+
+    <!-- Conteúdo -->
+    <div class="container bg-light p-5 mt-5" style="border-radius: 30px;">
+    <form th:action="@{/cursos/salvar}" method="post" th:object="${curso}">
 
         <input type="hidden" name="idCurso" th:field="*{idCurso}" />
         
@@ -31,7 +38,8 @@
 
         <button type="submit">Salvar</button>
 
-    </fperiodo>
+    </form>
+    </div>
 
 </body>
 </html>

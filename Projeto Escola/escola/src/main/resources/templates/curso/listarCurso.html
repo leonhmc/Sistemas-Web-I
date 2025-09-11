@@ -5,39 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documento</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">  
 </head>
-<body>
+<body style="background-color: #e9e9e9;">
 
-    <h1 style="text-align: center">Lista de cursos</h1>
-    <h3 style="text-align: center;"><a href="/cursos/criar">Cadastrar</a></h3>
+    <!-- Cabeçalho -->
+    <h1 class="p-3 text-center text-light" style="background-color: black;">Lista de cursos</h1>
 
-    <!-- Tabela para exibir os cursos cadastrados -->
-    <table style="margin: 0 auto; border: 1px solid black; border-collapse: collapse;">
-        <tr>
-            <td colspan="8" style="text-align: center;">Lista de cursos</td>
-        </tr>
+    <!-- Conteúdo -->
+    <div class="container p-3 mt-5 bg-light text-center" style="border-radius: 30px;">
 
-        <tr>
-            <th>#</th>
-            <th>Nome</th>
-            <th>Sigla</th>
-            <th>Carga horária</th>
-            <th>Período</th>
-            <th colspan="2">Ações</th>
-        </tr>
+        <!-- Botão Cadastrar -->
+        <button type="button" class="btn btn-dark p-3 mb-2" style="border-radius: 60px;"><a href="/alunos/criar" style="text-decoration: none; color: white;">Cadastrar</a></button> <br>
 
-        <tr th:each="curso : ${cursos}">
-            <td th:text="${curso.idcurso}"></td>
-            <td th:text="${curso.nomecurso}"></td>
-            <td th:text="${curso.siglaCurso}"></td>
-            <td th:text="${curso.chCurso}"></td>
-            <td th:text="${curso.periodoCurso}"></td>
-            <td>
-                <a th:href="@{/cursos/editar{id}(id=${curso.idCurso})}">Editar</a>
-                <a th:href="@{/cursos/excluir{id}(id=${curso.idCurso})}">Excluir</a>
-            </td>
-        </tr>
-    </table>
+        <br>
+
+        <!-- Tabela para exibir os cursos cadastrados -->
+        <table style="margin: 0 auto; border: 1px solid black; border-collapse: collapse;">
+            <tr>
+                <td colspan="8" style="text-align: center;">Lista de cursos</td>
+            </tr>
+
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Sigla</th>
+                <th>Carga horária</th>
+                <th>Período</th>
+                <th colspan="2">Ações</th>
+            </tr>
+
+            <tr th:each="curso : ${cursos}">
+                <td th:text="${curso.idCurso}"></td>
+                <td th:text="${curso.nomeCurso}"></td>
+                <td th:text="${curso.siglaCurso}"></td>
+                <td th:text="${curso.chCurso}"></td>
+                <td th:text="${curso.periodoCurso}"></td>
+                <td>
+                    <a th:href="@{/cursos/editar{id}(id=${curso.idCurso})}">Editar</a>
+                    <a th:href="@{/cursos/excluir{id}(id=${curso.idCurso})}">Excluir</a>
+                </td>
+            </tr>
+        </table>
+    </div>
 
 </body>
 </html>
