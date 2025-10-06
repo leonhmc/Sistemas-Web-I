@@ -13,16 +13,16 @@ public class CursoService {
  
     // Injeção de dependência do repositório de cursos
     @Autowired
-    private CursoRepository alunoRepository;
+    private CursoRepository cursoRepository;
  
     //Método para salvar um curso
     public Curso save(Curso curso){
-        return alunoRepository.save(curso);
+        return cursoRepository.save(curso);
     }
  
     //Método para listar todos os cursos
     public List<Curso> findAll(){
-        return alunoRepository.findAll();
+        return cursoRepository.findAll();
     }
  
     //Método para excluir um curso pelo ID

@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.projetoescola.escola.entity.Aluno;
+import br.com.projetoescola.escola.entity.Curso;
 import br.com.projetoescola.escola.service.AlunoService;
+import br.com.projetoescola.escola.service.CursoService;
 
 @Controller
 @RequestMapping("/alunos")
@@ -21,6 +23,10 @@ public class AlunoController {
     //Injeção de dependência da service de alunos
     @Autowired
     private AlunoService alunoService;
+
+    //Injeção de dependência da service de alunos e de cursos
+    @Autowired
+    private CursoService cursoService;
  
     //Método para salvar um aluno
     @PostMapping("/salvar")
@@ -35,10 +41,13 @@ public class AlunoController {
         model.addAttribute("alunos", alunos);
         return "aluno/listarAluno";
     }
+
     //Método para abrir o formulário de aluno
     @GetMapping("/criar")
     public String criarForm(Model model) {
         model.addAttribute("aluno", new Aluno());
+        List<Curso> cursos = cursoService.findAll();
+        model.addAttribute("cursos", cursos);
         return "aluno/formularioAluno";
     }
    
@@ -53,6 +62,8 @@ public class AlunoController {
     @GetMapping("/editar/{id}")
     public String editarForm(@PathVariable("id") Integer id, Model model) {
         Aluno aluno = alunoService.findById(id);
+        List<Curso> cursos = cursoService.findAll();
+        model.addAttribute("cursos", cursos);
         model.addAttribute("aluno", aluno);
         return "aluno/formularioAluno";
     }
