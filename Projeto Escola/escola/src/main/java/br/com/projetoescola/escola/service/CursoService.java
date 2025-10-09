@@ -25,7 +25,7 @@ public class CursoService {
         return cursoRepository.findAll();
     }
  
-    //Método para excluir um curso pelo ID
+    //Método para excluir um     curso pelo ID
     public void deleteById(Integer id){
         cursoRepository.deleteById(id);
     }

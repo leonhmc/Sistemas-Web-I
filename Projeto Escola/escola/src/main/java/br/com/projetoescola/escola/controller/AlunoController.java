@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.projetoescola.escola.entity.Aluno;
+import br.com.projetoescola.escola.entity.Cidade;
 import br.com.projetoescola.escola.entity.Curso;
 import br.com.projetoescola.escola.service.AlunoService;
+import br.com.projetoescola.escola.service.CidadeService;
 import br.com.projetoescola.escola.service.CursoService;
 
 @Controller
@@ -27,6 +29,10 @@ public class AlunoController {
     //Injeção de dependência da service de alunos e de cursos
     @Autowired
     private CursoService cursoService;
+
+    //Injeção de dependência da service de cidades
+    @Autowired
+    private CidadeService cidadeService;
  
     //Método para salvar um aluno
     @PostMapping("/salvar")
@@ -48,6 +54,8 @@ public class AlunoController {
         model.addAttribute("aluno", new Aluno());
         List<Curso> cursos = cursoService.findAll();
         model.addAttribute("cursos", cursos);
+        List<Cidade> cidades = cidadeService.findAll();
+        model.addAttribute("cidades", cidades);
         return "aluno/formularioAluno";
     }
    
