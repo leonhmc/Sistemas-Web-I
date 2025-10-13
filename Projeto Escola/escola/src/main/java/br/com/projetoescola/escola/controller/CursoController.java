@@ -42,7 +42,7 @@ public class CursoController {
         return "curso/formularioCurso";
     }
    
-    //Método para excluir um aluno pelo ID
+    //Método para excluir um curso pelo ID
     @GetMapping("/excluir/{id}")
     public String excluir(@PathVariable Integer id) {
         cursoService.deleteById(id);

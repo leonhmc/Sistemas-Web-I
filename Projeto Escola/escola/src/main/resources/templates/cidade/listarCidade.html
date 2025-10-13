@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body style="background-color: #e9e9e9;">
+
+    <!-- Cabeçalho -->
+    <h1 class="p-3 text-light" style="text-align: center; background-color: black;">Lista de Cidades</h1>
+
+    <!-- Conteúdo -->
+    <div class="container bg-light p-5 mt-5 text-center" style="border-radius: 30px;">
+
+      
+        <!-- Botão Cadastrar -->
+        <button type="button" class="btn btn-dark p-3 mb-2" style="border-radius: 60px;"><a href="/cidades/criar" style="text-decoration: none; color: white;">Cadastrar</a></button> <br>
+
+        <!-- Tabela para exibir as cidades cadastradas -->
+        <table style="margin: 0 auto; border: 1px solid black; border-collapse: collapse;">
+            <tr>
+                <td colspan="8" style="text-align: center;">Lista de Cidades</td>
+            </tr>
+
+            <tr>
+                <th>#</th>
+                <th>Nome</th>
+                <th colspan="2">Ações</th>
+            </tr>
+
+            <tr th:each="cidade : ${cidades}">
+                <td th:text="${cidade.idCidade}"></td>
+                <td th:text="${cidade.nomeCidade}"></td>
+                <td>
+                    <a th:href="@{/cidades/editar/{id}(id=${cidade.idCidade})}">Editar</a>
+                    <a th:href="@{/cidades/excluir/{id}(id=${cidade.idCidade})}">Excluir</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>

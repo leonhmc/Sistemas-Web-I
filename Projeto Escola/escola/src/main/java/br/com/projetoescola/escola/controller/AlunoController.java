@@ -26,7 +26,7 @@ public class AlunoController {
     @Autowired
     private AlunoService alunoService;
 
-    //Injeção de dependência da service de alunos e de cursos
+    //Injeção de dependência da service de cursos
     @Autowired
     private CursoService cursoService;
 
@@ -67,11 +67,13 @@ public class AlunoController {
     }
 
     //Método para abrir o formulário de edição de alunos
-    @GetMapping("/editar/{id}")
+    @GetMapping("/editar/{id}x")
     public String editarForm(@PathVariable("id") Integer id, Model model) {
         Aluno aluno = alunoService.findById(id);
         List<Curso> cursos = cursoService.findAll();
         model.addAttribute("cursos", cursos);
+        List<Cidade> cidades = cidadeService.findAll();
+        model.addAttribute("cidades", cidades);
         model.addAttribute("aluno", aluno);
         return "aluno/formularioAluno";
     }
