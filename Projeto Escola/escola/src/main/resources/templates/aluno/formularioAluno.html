@@ -18,10 +18,10 @@
     <div class="container bg-light p-5 mt-5" style="border-radius: 30px;">
     <form th:action="@{/alunos/salvar}" method="post" th:object="${aluno}">
 
-        <input type="hidden" name="idAluno" th:field="*{idAluno}" />
+        <input type="hidden" name="idPessoa" th:field="*{idPessoa}" />
         
         <label for="nomeAluno">Nome:</label>
-        <input type="text" name="nomeAluno" th:field="*{nomeAluno}" />
+        <input type="text" name="nomePessoa" th:field="*{nomePessoa}" />
         <br>
 
         <label for="telefoneAluno">Telefone:</label>

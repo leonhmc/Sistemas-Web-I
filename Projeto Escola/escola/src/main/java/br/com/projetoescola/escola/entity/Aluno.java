@@ -17,16 +17,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Aluno {
+public class Aluno extends Pessoa {
 
     // Definição dos atributos da classe Aluno
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer idAluno;
-
-    @Column (nullable = false, length = 40)
-    private String nomeAluno;
-
     @Column (nullable = false, length = 11)
     private String telefoneAluno;
 
