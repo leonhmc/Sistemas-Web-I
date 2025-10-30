@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import br.com.projetoescola.escola.dto.AlunoTelefone;
 import br.com.projetoescola.escola.entity.Aluno;
 import br.com.projetoescola.escola.repository.AlunoRepository;
 
@@ -34,4 +36,7 @@ public class AlunoService {
         return alunoRepository.findById(id).orElse(null);
     }
 
+    public List<AlunoTelefone> buscarAlunoTelefone(){
+        return alunoRepository.buscarAlunoTelefone();
+    }
 }
