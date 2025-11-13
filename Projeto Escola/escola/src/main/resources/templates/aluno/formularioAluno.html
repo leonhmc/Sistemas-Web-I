@@ -41,7 +41,7 @@
         <br>    
 
         <label for="idCidade">Cidade:</label>
-        <select th:field="*{cidade.idCidade}">
+        <select th:field="*{cidade}">
             <option th:each="cidade : ${cidades}"
                 th:text="${cidade.nomeCidade}"
                 th:value="${cidade.idCidade}" </option>

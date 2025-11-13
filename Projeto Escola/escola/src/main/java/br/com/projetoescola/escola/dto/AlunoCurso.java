@@ -1,17 +1,24 @@
 package br.com.projetoescola.escola.dto;
 
 public class AlunoCurso {
+
+    private String nomeAluno;
     
     private String nomeCurso;
-    public AlunoCurso () {
+
+    public AlunoCurso(String nomeAluno, String nomeCurso) {
+        this.nomeAluno = nomeAluno;
+        this.nomeCurso = nomeCurso;
     }
 
-        public AlunoCurso (String nomeCurso) {
-            this.nomeCurso = nomeCurso;
-        }
+    public String getNomeAluno() {
+        return nomeAluno;
+    }
+
+    public String getNomeCurso() {
+        return nomeCurso;
+    }
+
     
-        public String getNomeCurso() {
-            return nomeCurso;
-        }
 
 }

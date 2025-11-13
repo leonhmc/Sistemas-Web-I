@@ -19,7 +19,7 @@
 
       
         <!-- Botão Cadastrar -->
-        <button type="button" class="btn btn-dark p-3 mb-2" style="border-radius: 60px;"><a href="/alunos/listar/listar-nome-telefone" style="text-decoration: none; color: white;">Cadastrar</a></button> <br>
+        <button type="button" class="btn btn-dark p-3 mb-2" style="border-radius: 60px;"><a href="/alunos/criar" style="text-decoration: none; color: white;">Cadastrar</a></button> <br>
 
         <!-- Tabela para exibir os alunos cadastrados -->
         <table style="margin: 0 auto; border: 1px solid black; border-collapse: collapse;">
@@ -33,7 +33,7 @@
             </tr>
 
             <tr th:each="aluno : ${alunos}">
-                <td th:text="${aluno.nomeAluno}"></td>
+                <td th:text="${aluno.nomePessoa}"></td>
                 <td th:text="${aluno.telefoneAluno}"></td>
             </tr>
         </table>
