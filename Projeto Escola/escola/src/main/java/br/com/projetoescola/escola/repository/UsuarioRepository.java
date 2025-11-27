@@ -8,6 +8,6 @@ import br.com.projetoescola.escola.entity.Usuario;
  
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
  
-    Optional<Usuario> findByLoginUsuario(String loginUsuario);
+    Optional<Usuario> findByLogin(String loginUsuario);
    
 }
