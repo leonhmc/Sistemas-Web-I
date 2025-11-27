@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import br.com.projetoescola.escola.dto.AlunoCurso;
 import br.com.projetoescola.escola.entity.Curso;
 import br.com.projetoescola.escola.service.CursoService;
 
@@ -57,13 +55,6 @@ public class CursoController {
         Curso curso = cursoService.findById(id);
         model.addAttribute("curso", curso);
         return "curso/formularioCurso";
-    }
-
-    @GetMapping("/listar/listar-nome-curso")
-    public String listarNomeCurso(Model model) {
-    List<AlunoCurso> cursos = cursoService.buscarAlunoCurso();
-    model.addAttribute("cursos", cursos);
-    return "curso/listarNomeCurso";
     }
 
 }

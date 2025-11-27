@@ -1,27 +1,28 @@
 package br.com.projetoescola.escola.service;
-
+ 
+import java.util.List;
+ 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+ 
+import br.com.projetoescola.escola.entity.Usuario;
+import br.com.projetoescola.escola.repository.UsuarioRepository;
+ 
 @Service
 public class UsuarioService {
-    
+ 
     @Autowired
-    private PasswordEncoder passwordEncoder;
-
-    public Usuario save(Usuario usuario){
-        //Criptografar a senha antes de salvar
-        usuario.setSenhaUsuario(passwordEncoder.encode(usuario.getSenhaUsuario()));
+    private UsuarioRepository usuarioRepository;
+ 
+    // Salvar usuário
+    public Usuario save(Usuario usuario) {
         return usuarioRepository.save(usuario);
     }
-
-    public Usuario findById(Integer id){
-        return usuarioRepository.findById(id).orElse(other:null);
-    }
-
-
-    public List<Usuario> findAll(){
+ 
+    // Listar todos
+    public List<Usuario> findAll() {
         return usuarioRepository.findAll();
     }
-
+ 
+   
 }

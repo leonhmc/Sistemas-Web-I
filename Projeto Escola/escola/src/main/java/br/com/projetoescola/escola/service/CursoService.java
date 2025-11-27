@@ -4,8 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import br.com.projetoescola.escola.dto.AlunoCurso;
 import br.com.projetoescola.escola.entity.Curso;
 import br.com.projetoescola.escola.repository.CursoRepository;
 
@@ -34,10 +32,6 @@ public class CursoService {
     //Método para buscar o curso pelo ID
     public Curso findById(Integer id){
         return cursoRepository.findById(id).orElse(null);
-    }
-
-    public List<AlunoCurso> buscarAlunoCurso(){
-        return cursoRepository.buscarAlunoCurso();
     }
 
 }
