@@ -1,24 +1,34 @@
 <html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
-<body>
-    <div>
-        <h1>Acesso ao Sistema</h1>
-        <form method="post" th:action="@{/login}">
-            <label for="username">Usuário</label>
-            <input type="text" id="username" name="username" />
-            <br>
-            <label for="password">Senha</label>
-            <input type="text" id="password" name="password" />
-            <br>
-            <button type="submit">Entrar</button>
-        </form>
-        <p th:if="${param.error}">Login inválido</p>
-        <p th:if="${param.logout}">Login efetuado</p>
-        <form action="/escola" method="get">
-            <button type="submit">Voltar para home</button>
-        </form>
+<body style="background-color: #e9e9e9;">
+    <div class="container-flex">
+        <div class="bg-primary p-3 mb-3">
+            <h1 class="text-light text-center">Acesso ao Sistema</h1>
+        </div>
+        <div class="container bg-white p-3" style="border-radius: 15px;">
+            <form method="post" th:action="@{/login}">
+                <label for="username" class="m-2">Usuário:</label>
+                <input type="text" id="username" name="username" />
+                <br>
+                <label for="password" class="m-2">Senha:</label>
+                <input type="text" id="password" name="password" />
+                <br>
+                <button type="submit" class="mt-2 btn btn-outline-dark">Entrar</button>
+            </form>
+            <p th:if="${param.error}">Login inválido</p>
+            <p th:if="${param.logout}">Login efetuado</p>
+            <form action="/escola" method="get">
+                <button type="submit" class="btn btn-outline-dark">Voltar para home</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>

@@ -12,7 +12,6 @@ public class Usuario {
     @GeneratedValue (strategy = GenerationType.AUTO)
     private Integer idUsuario;
  
-   
     @Column(nullable = false, length = 60)
     private String nomeUsuario;
  
@@ -26,7 +25,7 @@ public class Usuario {
     private String login;
  
     @Column(nullable = false, length = 20)
-    private String role;
+    private String role = "ROLE_USER";
  
     public Usuario(){
        

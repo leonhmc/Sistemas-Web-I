@@ -5,30 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulário Curso</title>
-    <link rel="stylesheet" href="/css/estilo.css">
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
   </head>
-  <body>
-    <h1>Cadastro de Usuário</h1>
- 
-    <form th:action="@{/usuarios/salvar}" th:object="${usuario}" method="post">
-        <input type="hidden" th:field="*{idUsuario}" />
- 
-        <label>Nome:</label>
-        <input type="text" th:field="*{nomeUsuario}" /><br/>
- 
-        <label>Email:</label>
-        <input type="email" th:field="*{cpfUsuario}" /><br/>
- 
-        <label>Login:</label>
-        <input type="text" th:field="*{login}" /><br/>
- 
-        <label>Senha:</label>
-        <input type="password" th:field="*{senha}" /><br/>
- 
-     
-        <button type="submit">Salvar</button>
-    </form>
- 
-    <a th:href="@{/usuarios/listar}">Voltar</a>
+  <body style="background-color: #e9e9e9;">
+    <div class=" container-flex bg-primary p-1 mb-3">
+      <h1 class="text-center text-light">Cadastro de Usuário</h1>
+    </div>
+    
+    <div class="container bg-white p-3" style="border-radius: 15px;">
+      <form th:action="@{/usuarios/salvar}" th:object="${usuario}" method="post">
+          <input type="hidden" th:field="*{idUsuario}" />
+  
+          <label>Nome:</label>
+          <input type="text" th:field="*{nomeUsuario}" class="m-2" /><br/>
+  
+          <label>CPF:</label>
+          <input type="text" th:field="*{cpfUsuario}" class="m-2" /><br/>
+  
+          <label>Login:</label>
+          <input type="text" th:field="*{login}" class="m-2" /><br/>
+  
+          <label>Senha:</label>
+          <input type="password" th:field="*{senha}" class="m-2" /><br/>
+  
+      
+          <button type="submit" class="btn btn-outline-dark mt-2">Salvar</button>
+      </form>
+  
+      <a th:href="@{/usuarios/listar}" class="btn btn-outline-dark mt-1">Voltar</a>
+    </div>
 </body>
 </html>

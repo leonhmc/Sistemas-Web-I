@@ -36,7 +36,7 @@ public class UsuarioController {
     @PostMapping("/salvar")
     public String salvar(@ModelAttribute Usuario usuario) {
         usuarioService.save(usuario);
-        return "redirect:/usuario/listar";
+        return "/login";
     }
    
 }
